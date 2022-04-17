@@ -67,7 +67,10 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-
+        
+    - name: Download n1
+      run: git clone https://github.com/x1t/n1emmc package/install-program
+      
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
